@@ -53,5 +53,10 @@ The suite starts with job intake and evidence analysis. It presents proposed
 resume changes for review before editing the source resume or assembling a
 final version.
 
+Each new posting gets its own folder under `job-applications/`. The suite saves
+the pasted or extracted posting as `job-description.md` before analysis. Review
+artifacts stay in that folder, and an approved LaTeX resume is written there as
+`resume.tex` without overwriting the base template.
+
 For Codex skill behavior and invocation details, see the
 [official OpenAI documentation](https://developers.openai.com/codex/skills/).

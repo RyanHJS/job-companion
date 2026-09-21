@@ -49,17 +49,29 @@ heuristic and retain the rendered-layout requirement.
 8. [`resume-assembly`](skills/resume-assembly/SKILL.md): assemble only accepted
    proposals after the user asks for the complete resume.
 
-## Resume Workspaces And Review Artifacts
+## Job Application Workspaces And Review Artifacts
 
-Keep every resume and all of its resume-specific review artifacts in one folder:
+Create a separate workspace for every new job description as soon as intake
+succeeds:
 
-`docs/resumes/<person>-<bucket>[-<target-or-date>]/`
+`job-applications/<company>-<role>-<YYYY-MM-DD>[-<sequence>]/`
 
-Use a stable candidate slug and a broad role bucket, such as
-`candidate-ai-engineer`, `candidate-research-engineer`, or
-`candidate-full-stack-engineer`. Append a company or role slug when known;
-otherwise append an ISO date or numeric suffix. Shared guidance remains outside
-resume folders.
+Use filesystem-safe slugs. If company or role is unavailable, use `unknown` for
+that component rather than delaying persistence. Add a numeric sequence when a
+path already exists. A retry of the same intake may reuse its workspace only
+when the source and job-description content match; never overwrite a different
+posting.
+
+Before requirements analysis, save the complete pasted or extracted posting as
+`job-description.md` using
+[`templates/job-description.md`](templates/job-description.md). Include the
+source type, source URL when present, capture date, company, and role. Keep this
+file even if later analysis stops or the user rejects all resume changes.
+
+Keep every artifact for that posting in the same workspace, including the
+normalized job description, resume snapshots, proposal diff and reviews, the
+approved tailored source, and rendered output. Shared guidance remains outside
+job-application folders.
 
 For every proposal run, maintain two complete normalized Markdown snapshots:
 `resume-current.md` and `resume-proposed.md`. The current snapshot represents
@@ -71,7 +83,9 @@ surface and the table explains evidence and editorial reasoning.
 Proposal generation may change Markdown review artifacts, but must not edit the
 source `.tex`, `.docx`, PDF, or other submission format. After explicit user
 approval, `resume-assembly` applies only approved changes to the source,
-compiles it, and verifies the rendered layout.
+stores the tailored LaTeX source as `resume.tex` in the job workspace, compiles
+it, and verifies the rendered layout. When the supplied base uses another source
+format, preserve that format and filename instead of fabricating LaTeX.
 
 Pass structured outputs between specialists using the templates in `templates/`.
 Preserve proposal IDs across turns. Keep inferred and invented claims visibly

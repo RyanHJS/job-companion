@@ -11,6 +11,18 @@ Remove navigation, cookie notices, duplicated text, and unrelated page content.
 If the page is blocked, requires login, or lacks enough job text, ask the user
 to paste the description. Never fill missing content from assumptions.
 
-Return `source_url`, `company`, `role`, `job_text`, `extraction_warnings`, and
-`source_confidence`. Keep the original text for traceability; downstream skills
-use the normalized text.
+As soon as complete job text is available, create a new job workspace at
+`job-applications/<company>-<role>-<YYYY-MM-DD>[-<sequence>]/`. Use `unknown`
+for missing company or role metadata and a numeric sequence to avoid collisions.
+A retry may reuse a workspace only when both its source and content match.
+
+Persist the complete pasted or extracted posting to `job-description.md` using
+`templates/job-description.md` before requirements analysis. Preserve pasted
+text exactly. For a URL, preserve the source URL and the complete extracted
+job-specific text. Never overwrite a different posting, and retain the file even
+when downstream analysis stops.
+
+Return `source_url`, `company`, `role`, `job_text`, `job_workspace`,
+`job_description_path`, `extraction_warnings`, and `source_confidence`.
+Downstream skills use the normalized text and write their artifacts into
+`job_workspace`.

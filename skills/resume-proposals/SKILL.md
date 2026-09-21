@@ -24,7 +24,9 @@ only purpose is naming a tool.
 Every proposal run must produce two complete normalized Markdown snapshots
 using `templates/resume-text-snapshot.md`: `resume-current.md` and
 `resume-proposed.md`. Preserve the current resume structure and change only
-wording in scope for the proposal run.
+wording in scope for the proposal run. Store both snapshots, the Git-style diff,
+the rationale ledger, and both perspective reviews in the same job-specific
+folder as `job-description.md`.
 
 Generate a Git-style word/line diff between the snapshots as the primary
 wording-review surface. Also produce a compact rationale ledger using

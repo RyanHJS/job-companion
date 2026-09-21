@@ -10,4 +10,6 @@ role: "optional"
 ```
 
 For a URL, preserve the URL and report extraction warnings. For pasted text,
-preserve the text exactly before normalization.
+preserve the text exactly before normalization. Once complete job text is
+available, allocate a unique `job_workspace` and persist
+`job-description.md` before continuing.

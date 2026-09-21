@@ -14,7 +14,11 @@ contribution scope. Keep unconfirmed inferred or invented claims out of the
 final resume.
 
 Only at this stage may you edit the resume source (`.tex`, `.docx`, or another
-requested source format). Apply the approved Markdown diff, compile when the
-format supports it, verify the rendered layout, and return the complete tailored
+requested source format). Apply the approved Markdown diff. For a LaTeX base,
+write the complete tailored source to `resume.tex` in the same job-specific
+folder as `job-description.md`; do not overwrite the base template. For another
+source format, preserve its format and filename in that folder instead of
+fabricating LaTeX. Compile when the format supports it, keep rendered output in
+the same folder, verify the rendered layout, and return the complete tailored
 resume plus a short change log. Do not introduce new edits during assembly;
 send new ideas back through `resume-proposals`.
