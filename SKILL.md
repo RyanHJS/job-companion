@@ -54,13 +54,25 @@ heuristic and retain the rendered-layout requirement.
 Create a separate workspace for every new job description as soon as intake
 succeeds:
 
-`job-applications/<company>-<role>-<YYYY-MM-DD>[-<sequence>]/`
+`job-applications/<person>/<company>/<grouping>/<posting>/`
 
-Use filesystem-safe slugs. If company or role is unavailable, use `unknown` for
-that component rather than delaying persistence. Add a numeric sequence when a
-path already exists. A retry of the same intake may reuse its workspace only
-when the source and job-description content match; never overwrite a different
-posting.
+Resolve `<person>` automatically as `ryan` or `chloe` from the base resume or
+explicit user context. Extract `<company>` from the posting. If either value
+cannot be determined reliably, ask for that missing value before creating the
+workspace; do not create an `unknown` bucket.
+
+Within the person's company bucket, classify the posting under either a broad,
+reusable job category or the specific job title. Prefer an existing matching
+category when it accurately groups comparable roles, such as `ai-engineering`
+or `product-management`. Use a normalized specific title when the job is
+specialized, does not fit a stable category, or grouping it would hide a
+meaningful distinction. Record the choice as `category` or `specific_job` in
+`job-description.md`.
+
+Use filesystem-safe slugs. Name `<posting>` with the capture date and role slug,
+adding a numeric sequence when the path already exists. A retry of the same
+intake may reuse its workspace only when the source and job-description content
+match; never overwrite a different posting.
 
 Before requirements analysis, save the complete pasted or extracted posting as
 `job-description.md` using

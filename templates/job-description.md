@@ -1,15 +1,18 @@
 # Job Description
 
 Persist one file for every new posting at
-`job-applications/<company>-<role>-<YYYY-MM-DD>[-<sequence>]/job-description.md`.
+`job-applications/<person>/<company>/<grouping>/<posting>/job-description.md`.
 
 ```yaml
 ---
 source_type: url | pasted_text
 source_url: "URL or null"
 captured_at: "YYYY-MM-DD"
-company: "company or unknown"
-role: "role or unknown"
+person: Ryan | Chloe
+company: "company name"
+role: "job title"
+grouping_type: category | specific_job
+grouping_slug: "filesystem-safe category or job-title slug"
 ---
 ```
 
