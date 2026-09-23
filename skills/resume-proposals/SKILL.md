@@ -52,6 +52,13 @@ text. Record both perspectives using
 `templates/proposal-perspective-review.md`; unresolved concerns remain visible
 to the user.
 
+Reviewer questions must address wording introduced or materially changed by a
+proposal. They must not ask the candidate to substantiate a fact already stated
+in the current resume unless another user-provided source directly contradicts
+it. Do not turn education eligibility, enrollment, work authorization, location,
+availability, compensation, or other application-screening criteria into resume
+questions or proposals.
+
 Include the stable proposal ID and target location in the `Why` cell or as a
 short heading immediately above the table. Include only changed points in the
 ledger. Stop after generating the snapshots, diff, ledger, and two perspective
@@ -63,6 +70,7 @@ generate a replacement source file as a side effect. Source edits belong only
 to `resume-assembly`, after the user explicitly approves the proposal diff and
 asks for the complete tailored resume.
 
-Return an overall fit estimate, important requirements, proposals, unresolved
-opportunities, and a next action for every proposal. Preserve stable IDs across
-revisions.
+Return an overall resume-fit estimate based only on bullet-addressable
+requirements, important requirements, proposals, unresolved opportunities, and
+a next action for every proposal. Do not lower resume fit because of
+`screening_only` criteria. Preserve stable IDs across revisions.

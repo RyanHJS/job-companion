@@ -35,9 +35,13 @@ heuristic and retain the rendered-layout requirement.
    or underspecified experience through
    adaptive, requirement-linked questions. Infer adjacent capabilities only as
    prompts for verification; branch from broad experience questions into
-   implementation details and use an occasional practical knowledge check when
-   an answer is vague. Ask a few high-value questions, wait for answers, and
-   update the evidence before proposing claims.
+   implementation details only when the answer could create or materially
+   improve a resume bullet. Treat facts already stated in the current resume as
+   accepted evidence; do not ask the candidate to re-verify them unless another
+   provided source directly contradicts them. Exclude education eligibility,
+   enrollment, work authorization, location, availability, compensation, and
+   other application-screening questions. Ask a few high-value bullet questions,
+   wait for answers, and update the evidence before proposing claims.
 5. [`resume-proposals`](skills/resume-proposals/SKILL.md): produce exact,
    labeled bullet changes; do not rewrite the full resume yet.
 6. Before user review, spawn two independent proposal reviewers: one acting as
