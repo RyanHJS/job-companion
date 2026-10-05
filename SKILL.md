@@ -28,22 +28,22 @@ heuristic and retain the rendered-layout requirement.
 1. [`job-intake`](skills/job-intake/SKILL.md): normalize a URL or pasted job
    description.
 2. [`job-requirements`](skills/job-requirements/SKILL.md): rank what the
-   employer is actually asking for.
+   employer is actually asking for and group important language into high-level
+   capability themes and keyword families.
 3. [`resume-evidence`](skills/resume-evidence/SKILL.md): inventory what the
-   current resume demonstrates.
+   current resume demonstrates, including adjacent signals for omitted work.
 4. [`experience-recall`](skills/experience-recall/SKILL.md): recover omitted
-   or underspecified experience through
-   adaptive, requirement-linked questions. Infer adjacent capabilities only as
-   prompts for verification; branch from broad experience questions into
-   implementation details only when the answer could create or materially
-   improve a resume bullet. Treat facts already stated in the current resume as
-   accepted evidence; do not ask the candidate to re-verify them unless another
-   provided source directly contradicts them. Exclude education eligibility,
-   enrollment, work authorization, location, availability, compensation, and
-   other application-screening questions. Ask a few high-value bullet questions,
-   wait for answers, and update the evidence before proposing claims.
+   or underspecified experience by presenting the most useful bullet direction
+   and three or four grounded variants before asking for detail. Let the
+   candidate select `A`, `B`, `C`, optionally `D`, `None`, or `Something else`.
+   Treat a selection as confirmation of the direction only and ask at most one
+   short follow-up for an essential fact. Use open-ended interviewing only when
+   responsible choices cannot be formed. Treat facts already stated in the
+   current resume as accepted evidence and keep all unconfirmed variants out of
+   the evidence map.
 5. [`resume-proposals`](skills/resume-proposals/SKILL.md): produce exact,
-   labeled bullet changes; do not rewrite the full resume yet.
+   labeled bullet changes, including confirmed new bullets; do not rewrite the
+   full resume yet.
 6. Before user review, spawn two independent proposal reviewers: one acting as
    a recruiter and one as a technical hiring manager. Each reviews every new
    proposal for clarity, relevance, credibility, glaring issues, and questions

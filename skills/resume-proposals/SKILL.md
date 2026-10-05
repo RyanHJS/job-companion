@@ -10,6 +10,14 @@ answered recall questions. Generate discrete records using
 `templates/proposal-record.md`; do not assemble a complete resume or edit the
 source resume.
 
+Consider confirmed recall discoveries as candidates for new bullets, not only
+as material for rewriting existing bullets. Rank them against existing content
+by job relevance, evidence strength, distinct contribution, and scan value. A
+new bullet should displace weaker content when space is constrained rather than
+being appended automatically. Use high-level capability alignment to choose
+content, then include exact job keywords only where they accurately describe
+the confirmed work.
+
 Use labels: `rewritten` for one existing bullet, `recombined` for multiple
 existing evidence items, `inferred` for a plausible unstated capability, and
 `invented` for a new hypothesis. Mark inferred and invented proposals as
@@ -72,5 +80,7 @@ asks for the complete tailored resume.
 
 Return an overall resume-fit estimate based only on bullet-addressable
 requirements, important requirements, proposals, unresolved opportunities, and
-a next action for every proposal. Do not lower resume fit because of
-`screening_only` criteria. Preserve stable IDs across revisions.
+a next action for every proposal. For an unresolved high-value opportunity,
+return to candidate-first recall instead of emitting a compound interview
+question. Do not lower resume fit because of `screening_only` criteria.
+Preserve stable IDs across revisions.

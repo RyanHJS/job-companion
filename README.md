@@ -2,8 +2,9 @@
 
 Job Companion Suite is a Codex skill for tailoring an existing resume to a
 specific job. It analyzes the job, maps requirements to evidence in the base
-resume, asks targeted questions when evidence is missing, and proposes exact
-changes for review before assembling a final resume.
+resume, presents likely bullet directions as lightweight choices when evidence
+may be missing, and proposes exact changes for review before assembling a final
+resume.
 
 ## Install In Codex
 
