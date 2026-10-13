@@ -22,7 +22,7 @@ This is a content hierarchy, not a requirement to add a separate summary section
 
 Every resume bullet must fit within two rendered lines in the target resume layout. Draft to a target of 24–25 words per bullet, with 28 words as an absolute maximum. Allow a second line only when it carries a metric or outcome that would not otherwise fit. Never allow a bullet to wrap to three lines.
 
-For this limit, count every hyphen-separated component as a separate word: `low-latency` counts as two words and `LLM-as-a-judge` counts as four. Word count is still a drafting heuristic, not a guarantee of rendered length: technical names and dense noun compounds may require fewer words. Check the final PDF and shorten wording to meet the two-line rule without shrinking the font. Keep review comments and factual caveats outside proposed bullet text.
+For this limit, count every hyphen-separated component as a separate word: `low-latency` counts as two words and `LLM-as-a-judge` counts as four. Word count is still a drafting heuristic, not a guarantee of rendered length: technical names and dense noun compounds may require fewer words. The user checks the final PDF outside this skill workflow; never produce a PDF locally. When the user supplies rendered evidence, shorten wording to meet the two-line rule without shrinking the font. Keep review comments and factual caveats outside proposed bullet text.
 
 ## Bold Formatting
 

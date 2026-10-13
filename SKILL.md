@@ -23,7 +23,7 @@ as `docs/reviews/resume-writing-guidelines.md`. Do not change factual evidence,
 invent claims, or promote a one-off preference into a general rule without
 the user's confirmation. For example, if later review establishes that a 35-word
 maximum reliably fits the target layout, replace the earlier bullet-length
-heuristic and retain the rendered-layout requirement.
+heuristic and retain rendered-layout review as a user check outside this skill.
 
 1. [`job-intake`](skills/job-intake/SKILL.md): normalize a URL or pasted job
    description.
@@ -86,7 +86,7 @@ file even if later analysis stops or the user rejects all resume changes.
 
 Keep every artifact for that posting in the same workspace, including the
 normalized job description, resume snapshots, proposal diff and reviews, the
-approved tailored source, and rendered output. Shared guidance remains outside
+approved tailored source, and any user-provided rendered output. Shared guidance remains outside
 job-application folders.
 
 For every proposal run, maintain two complete normalized Markdown snapshots:
@@ -99,8 +99,11 @@ surface and the table explains evidence and editorial reasoning.
 Proposal generation may change Markdown review artifacts, but must not edit the
 source `.tex`, `.docx`, PDF, or other submission format. After explicit user
 approval, `resume-assembly` applies only approved changes to the source,
-stores the tailored LaTeX source as `resume.tex` in the job workspace, compiles
-it, and verifies the rendered layout. When the supplied base uses another source
+stores sanitized LaTeX as `resume.tex` in the job workspace, and runs the local
+contact helper to create a separate `private-resume-<revision>.tex` using `.env`.
+Never produce a PDF locally. Return source artifacts and state that PDF
+compilation and rendered-layout verification have not been performed.
+When the supplied base uses another source
 format, preserve that format and filename instead of fabricating LaTeX.
 
 Pass structured outputs between specialists using the templates in `templates/`.

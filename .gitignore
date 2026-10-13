@@ -1,0 +1,4 @@
+.env
+private-resume-*
+__pycache__/
+*.pyc
